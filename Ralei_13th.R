@@ -1,6 +1,15 @@
 setwd("E:/anaconda_r")
 
 #github testing
+
+#install.packages("ggplot2")
+library(ggplot2)
+
+#模拟生成一个正态分布，表示均值为7000，标准差为2000，数目为10000的男性毕业生收入
+data1 <- rnorm(10000, mean = 7000, sd = 2000)
+data1 <- as.data.frame(data1)
+data1[,2] <- "male"
+names(data1) <- c("income", "gender")
 ggplot(data1, aes(income)) + geom_histogram(stat = "density")
 
 #模拟生成一个正态分布，表示均值为5000，标准差为2000，数目为10000的女性毕业生收入
